@@ -6,6 +6,7 @@ public class Main
         //System.out.println(f.getCurrentFood());
         //int random = (int) ((Math.random() * 40) + 10);
         //System.out.println(random);
-        f.simulateOneDay(10);
+        System.out.print(f.simulateManyDays(10, 4));
+        System.out.println(" run days.");
     }
 }

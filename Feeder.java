@@ -21,6 +21,9 @@ public class Feeder {
         }
         else{
             currentFood = currentFood - (amountOfFood * numBirds);
+            if (currentFood < 0){
+                currentFood = 0;
+            }
             System.out.println("There are " + currentFood + " grams of food left.");
         }
     }
@@ -32,7 +35,16 @@ public class Feeder {
      */
     public int simulateManyDays(int numBirds, int numDays) 
     {
-        return 0;
+        int countDays = 0;
+        for (int days = 0; days < numDays; days++){
+            if (currentFood > 0){
+                System.out.println("Day " + (days + 1) + ": ");
+                simulateOneDay(numBirds);
+                System.out.println();
+                countDays++;
+            }
+        }
+        return countDays;
     }
 
     public int getCurrentFood()
